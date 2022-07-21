@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+
+{% block title %} 
+    {{ title }}
+{% endblock %}
+
+{% block title_content %}
+    <h1>Завдання на сьогодні</h1>
+{% endblock %}
+
+
+{% block content %}
+    {% if tasks %}
+        {%  for el in tasks %}
+            <div class="col" style="margin: 0 auto; width: 50%;">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                    <div class="card-header py-3">
+                        <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fs-5 text-muted">{{ el.text }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Завдання відсутні!</p>
+    {% endif %}
+{% endblock %}

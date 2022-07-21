@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block title_content %}
+    <h1>Login</h1>
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+    
+    </form>
+{% endblock %}
